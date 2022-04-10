@@ -1,7 +1,8 @@
-package hu.bme.aut.pokedb
+package hu.bme.aut.pokedb.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import hu.bme.aut.pokedb.R
 
 class MainActivity : AppCompatActivity() {
 
