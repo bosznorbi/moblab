@@ -1,4 +1,4 @@
-package hu.bme.aut.android.demoapp
+package hu.bme.aut.pokedb
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

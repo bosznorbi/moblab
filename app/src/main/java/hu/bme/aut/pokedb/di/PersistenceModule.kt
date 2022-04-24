@@ -1,4 +1,4 @@
-package hu.bme.aut.android.demoapp.di
+package hu.bme.aut.pokedb.di
 
 import dagger.Module
 import dagger.hilt.InstallIn
