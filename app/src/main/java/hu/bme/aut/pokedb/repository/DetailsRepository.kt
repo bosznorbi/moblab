@@ -1,4 +1,4 @@
-package hu.bme.aut.android.demoapp.ui.details
+package hu.bme.aut.pokedb.ui.details
 
 class DetailsRepository {
 }
