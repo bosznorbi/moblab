@@ -1,4 +1,4 @@
-package hu.bme.aut.android.demoapp.ui.main
+package hu.bme.aut.pokedb.ui.main
 
 class ListRepository {
 }

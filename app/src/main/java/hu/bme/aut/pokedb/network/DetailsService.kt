@@ -1,4 +1,4 @@
-package hu.bme.aut.android.demoapp.network
+package hu.bme.aut.pokedb.network
 
 class DetailsService {
 }
