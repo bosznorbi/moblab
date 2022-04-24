@@ -1,4 +1,4 @@
-package hu.bme.aut.android.demoapp.model
+package hu.bme.aut.pokedb.model
 
 data class Pokemon(
     val id: Int,
