@@ -18,5 +18,6 @@ enum class Type(val displayName: String, val rgb: Int) {
     STEEL("Steel", 0xB7B7CE),
     DRAGON("Dragon", 0x6F35FC),
     DARK("Dark", 0x705746),
-    FAIRY("Fairy", 0xD685AD)
+    FAIRY("Fairy", 0xD685AD),
+    NOTHING("Nothing", 0x000000)
 }
