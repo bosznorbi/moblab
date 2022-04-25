@@ -11,8 +11,8 @@ interface PokemonDao {
     @Query("select * from pokemon")
     suspend fun getAllPokemon(): List<PokemonEntity>
 
-    @Query("select * from pokemon where id >= :fromId and id <= :toId")
-    suspend fun getAllBetweenId(fromId: Int, toId: Int): List<PokemonEntity>
+    @Query("select * from pokemon where id >= :offset and id <= (:offset + :limit)")
+    suspend fun getAllBetweenId(offset: Int, limit: Int): List<PokemonEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPokemon(pokemon: PokemonEntity)
