@@ -23,6 +23,19 @@ paths:
       operationId: "getAllPokemon"
       produces:
         - "application/json"
+      parameters:
+        - in: "query"
+          name: "offset"
+          description: "Pokemon ID minimum value"
+          required: false
+          type: "integer"
+          format: "int64"
+        - in: "query"
+          name: "limit"
+          description: "Number of listed Pokemon"
+          required: false
+          type: "integer"
+          format: "int64"
       responses:
         "200":
           description: "Successful"

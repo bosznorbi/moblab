@@ -1,6 +1,6 @@
 package hu.bme.aut.pokedb.model
 
-data class Pokemon(
+data class PokemonDto(
     val id: Int,
     val name: String,
     val type1: Type,
