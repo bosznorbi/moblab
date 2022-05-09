@@ -1,4 +1,4 @@
-package hu.bme.aut.pokedb.ui.details
+package hu.bme.aut.pokedb.repository
 
 import hu.bme.aut.pokedb.db.PokemonDao
 import hu.bme.aut.pokedb.model.PokemonDto

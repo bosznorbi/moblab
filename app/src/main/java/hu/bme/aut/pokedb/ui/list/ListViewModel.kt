@@ -1,4 +1,4 @@
-package hu.bme.aut.pokedb.ui.main
+package hu.bme.aut.pokedb.ui.list
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -6,8 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.bme.aut.pokedb.model.PokemonDto
 import hu.bme.aut.pokedb.model.Region
-import hu.bme.aut.pokedb.model.Type
-import hu.bme.aut.pokedb.ui.details.PokemonRepository
+import hu.bme.aut.pokedb.repository.PokemonRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.collections.List
@@ -22,12 +21,11 @@ class ListViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            // ----- VALODI MUKODES:
-            // allPokemon.value = repository.getPokemon().map { it.id to it }.toMap()
-            // displayedPokemon.value = getRegion(Region.KANTO)!!
+            allPokemon.value = repository.getPokemon().map { it.id to it }.toMap()
+             displayedPokemon.value = getRegion(Region.KANTO)!!
 
             // TODO: mock, amig Moshi nem mukodik
-            displayedPokemon.value = listOf(
+            /*displayedPokemon.value = listOf(
                 PokemonDto(id = 1, name = "Bulbasaur", type1 = Type.GRASS, type2 = Type.POISON,
                     imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"),
                 PokemonDto(id = 2, name = "Ivysaur", type1 = Type.GRASS, type2 = Type.POISON,
@@ -40,7 +38,7 @@ class ListViewModel @Inject constructor(
                     imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png"),
                 PokemonDto(id = 212, name = "Scizor", type1 = Type.BUG, type2 = Type.STEEL,
                     imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png")
-            )
+            )*/
         }
     }
 

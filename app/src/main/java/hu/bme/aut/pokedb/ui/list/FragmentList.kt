@@ -1,22 +1,23 @@
-package hu.bme.aut.pokedb.ui.main
+package hu.bme.aut.pokedb.ui.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import hu.bme.aut.pokedb.databinding.FragmentListBinding
-import hu.bme.aut.pokedb.ui.MainActivity
-import hu.bme.aut.pokedb.ui.list.ListAdapter
 
-class FragmentList() : Fragment() {
+@AndroidEntryPoint
+class FragmentList : Fragment() {
 
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
     private val listViewModel: ListViewModel by viewModels()
+    private val adapter = MyListAdapter({})
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +25,13 @@ class FragmentList() : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentListBinding.inflate(inflater, container, false)
+
+        listViewModel.displayedPokemon.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
+        binding.listListView.adapter = adapter
+        binding.listListView.layoutManager = LinearLayoutManager(context)
+
         val view = binding.root
         return view
     }
@@ -40,9 +48,5 @@ class FragmentList() : Fragment() {
             )
         }
 
-        // val pokemonList = listViewModel.displayedPokemon.value?.toMutableList()
-        // val adapter = ListAdapter(pokemonList)
-        // binding.listListView.adapter = adapter
-        // TODO: { } klikkre odavigyen
     }
 }

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/fragmentList"
-        android:name="hu.bme.aut.pokedb.ui.main.FragmentList"
+        android:name="hu.bme.aut.pokedb.ui.list.FragmentList"
         android:label="FragmentList" >
         <action
             android:id="@+id/action_fragmentList_to_fragmentDetails"

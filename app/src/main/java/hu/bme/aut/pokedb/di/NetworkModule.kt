@@ -14,7 +14,7 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/api/v2")
+            .baseUrl("https://pokeapi.co/api/v2/")
             .build()
     }
 

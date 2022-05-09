@@ -9,7 +9,7 @@ data class PokemonDto(
     val type2: Type,
     val imageUrl: String
 ) {
-    fun toEntity() = PokemonEntity (
+    fun toEntity() = PokemonEntity(
         id = id,
         name = name,
         type1 = type1,
