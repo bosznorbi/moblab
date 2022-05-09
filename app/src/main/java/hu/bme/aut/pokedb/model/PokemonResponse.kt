@@ -7,7 +7,7 @@ data class PokemonResponse(
     @Json(name = "id")
     val id: Int,
 
-    @Json(name = "id")
+    @Json(name = "name")
     val name: String,
 
     @Json(name = "types")
@@ -19,7 +19,7 @@ data class PokemonResponse(
 ) {
     fun toDto() = PokemonDto(
         id = id,
-        name = name,
+        name = name.replaceFirstChar { it.uppercase() },
         type1 = Type.fromName(types[0].type.name)!!,
         type2 = Type.values().random(), // TODO: Type.fromName(types[1].type.name),
         imageUrl = sprites.frontDefault
