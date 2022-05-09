@@ -15,7 +15,7 @@
     <string name="id">ID</string>
     <string name="pokemon">Pokemon</string>
     <string name="type1">type</string>
-    <string name="slash">•</string>
+    <string name="slash"> • </string>
     <string name="type2">type</string>
     <string name="imageUrl">Image URL</string>
 </resources>

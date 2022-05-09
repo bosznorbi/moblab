@@ -39,18 +39,30 @@ class PersistenceTest {
         database.close()
     }
 
-    private val bulbasaur = PokemonEntity(id = 1, name = "Bulbasaur", type1 = Type.GRASS, type2 = Type.POISON,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
-    private val ivysaur = PokemonEntity(id = 2, name = "Ivysaur", type1 = Type.GRASS, type2 = Type.POISON,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png")
-    private val venusaur = PokemonEntity(id = 3, name = "Venusaur", type1 = Type.GRASS, type2 = Type.POISON,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png")
-    private val charmander = PokemonEntity(id = 4, name = "Charmander", type1 = Type.FIRE, type2 = Type.NORMAL,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")
-    private val charmeleon = PokemonEntity(id = 5, name = "Charmeleon", type1 = Type.FIRE, type2 = Type.FIGHTING,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png")
-    private val charizard = PokemonEntity(id = 6, name = "Charizard", type1 = Type.FIRE, type2 = Type.FLYING,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png")
+    private val bulbasaur = PokemonEntity(
+        id = 1, name = "Bulbasaur", type1 = Type.GRASS, type2 = Type.POISON,
+        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+    )
+    private val ivysaur = PokemonEntity(
+        id = 2, name = "Ivysaur", type1 = Type.GRASS, type2 = Type.POISON,
+        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
+    )
+    private val venusaur = PokemonEntity(
+        id = 3, name = "Venusaur", type1 = Type.GRASS, type2 = Type.POISON,
+        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+    )
+    private val charmander = PokemonEntity(
+        id = 4, name = "Charmander", type1 = Type.FIRE, type2 = Type.NORMAL,
+        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+    )
+    private val charmeleon = PokemonEntity(
+        id = 5, name = "Charmeleon", type1 = Type.FIRE, type2 = Type.FIGHTING,
+        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+    )
+    private val charizard = PokemonEntity(
+        id = 6, name = "Charizard", type1 = Type.FIRE, type2 = Type.FLYING,
+        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+    )
 
     @ExperimentalCoroutinesApi
     @Test
@@ -112,8 +124,10 @@ class PersistenceTest {
         dao.insertPokemon(charizard)
 
         // Act
-        val expected4 = PokemonEntity(id = 4, name = "Charmander", type1 = Type.FIRE, type2 = Type.NORMAL,
-        imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")
+        val expected4 = PokemonEntity(
+            id = 4, name = "Charmander", type1 = Type.FIRE, type2 = Type.NORMAL,
+            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+        )
 
         // Assert
         assertEquals(6, dao.getAllPokemon().size)
@@ -121,7 +135,10 @@ class PersistenceTest {
         assertEquals("Ivysaur", dao.getPokemon(2).name)
         assertEquals(Type.GRASS, dao.getPokemon(3).type1)
         assertEquals(expected4, dao.getPokemon(4))
-        assertEquals("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png", dao.getPokemon(5).imageUrl)
+        assertEquals(
+            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+            dao.getPokemon(5).imageUrl
+        )
         assertEquals(Type.FLYING, dao.getPokemon(6).type2)
     }
 
@@ -134,8 +151,10 @@ class PersistenceTest {
 
         // Act
         val conflictBulbasaurName = "Bulbasaur Conflict"
-        val conflictBulbasaur = PokemonEntity(id = 1, name = conflictBulbasaurName, type1 = Type.GRASS, type2 = Type.POISON,
-            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png")
+        val conflictBulbasaur = PokemonEntity(
+            id = 1, name = conflictBulbasaurName, type1 = Type.GRASS, type2 = Type.POISON,
+            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        )
         dao.insertPokemon(conflictBulbasaur)
 
         // Assert
@@ -157,8 +176,10 @@ class PersistenceTest {
         dao.insertPokemon(charizard)
 
         // Act
-        val expected4 = PokemonEntity(id = 4, name = "Charmander", type1 = Type.FIRE, type2 = Type.NORMAL,
-            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png")
+        val expected4 = PokemonEntity(
+            id = 4, name = "Charmander", type1 = Type.FIRE, type2 = Type.NORMAL,
+            imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+        )
 
         // Assert
         assertEquals(bulbasaur.id, dao.getPokemon(bulbasaur.id).id)

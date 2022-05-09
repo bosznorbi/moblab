@@ -13,8 +13,8 @@ data class PokemonListResponse(
     fun toDtoList(): List<PokemonDto> {
         return results.map { it ->
             PokemonDto(
-                id = it.url.dropLast(1).substring(URL_LENGTH, it.url.length).toInt(),
-                name = it.name,
+                id = it.url.dropLast(1).substring(URL_LENGTH, it.url.length - 1).toInt(),
+                name = it.name.replaceFirstChar { it.uppercase() },
                 type1 = Type.values().random(),
                 type2 = Type.values().random(),
                 imageUrl = it.url
