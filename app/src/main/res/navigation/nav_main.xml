@@ -15,5 +15,9 @@
     <fragment
         android:id="@+id/fragmentDetails"
         android:name="hu.bme.aut.pokedb.ui.details.FragmentDetails"
-        android:label="FragmentDetails" />
+        android:label="FragmentDetails" >
+        <argument
+            android:name="pokemonId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
