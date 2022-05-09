@@ -19,4 +19,12 @@ class PokemonRepository @Inject constructor(
             pokemonDao.getAllPokemon().map { it.toDto() }
         }
     }
+
+    suspend fun getDetails(id: Int): PokemonDto {
+        return try {
+            pokemonController.getPokemon(id)
+        } catch (e: Exception) {
+            pokemonDao.getPokemon(id).toDto()
+        }
+    }
 }

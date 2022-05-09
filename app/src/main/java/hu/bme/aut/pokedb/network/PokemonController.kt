@@ -8,8 +8,8 @@ import retrofit2.http.Query
 interface PokemonController {
 
     @GET("pokemon")
-    suspend fun getPokemonList(@Query("offset") offset: Int?, @Query("limit") limit: Int?): List<PokemonDto>
+    suspend fun getPokemonList(@Query("offset") offset: Int?, @Query("limit") limit: Int?): List<PokemonDto> // TODO: List<PokemonResponse>
 
     @GET("pokemon/{pokemonId}")
-    suspend fun getPokemon(@Path("pokemonId") pokemonId: Int): PokemonDto
+    suspend fun getPokemon(@Path("pokemonId") pokemonId: Int): PokemonDto // TODO: PokemonResponse
 }
