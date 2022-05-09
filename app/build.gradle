@@ -8,7 +8,6 @@ plugins {
 
 android {
     compileSdkVersion 32
-    buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "hu.bme.aut.pokedb"
         minSdkVersion 15
@@ -16,6 +15,7 @@ android {
         versionCode 1
         versionName "1.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -41,6 +41,8 @@ dependencies {
     implementation 'androidx.room:room-common:2.3.0'
     implementation 'androidx.room:room-ktx:2.3.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
     compileOnly 'com.github.pengrad:jdk9-deps:1.0'
 
     implementation "com.google.dagger:hilt-android:2.38.1"
@@ -56,4 +58,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.0"
+
+    implementation 'com.android.support:multidex:1.0.3'
 }
