@@ -5,8 +5,8 @@ import hu.bme.aut.pokedb.db.PokemonEntity
 data class PokemonDto(
     val id: Int,
     val name: String,
-    val type1: PokemonType,
-    val type2: PokemonType,
+    val type1: Type,
+    val type2: Type,
     val imageUrl: String
 ) {
     fun toEntity() = PokemonEntity (
