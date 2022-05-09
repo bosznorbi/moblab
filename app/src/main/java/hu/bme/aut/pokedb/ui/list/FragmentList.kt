@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import hu.bme.aut.pokedb.databinding.FragmentListBinding
@@ -18,7 +19,9 @@ class FragmentList : Fragment() {
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
     private val listViewModel: ListViewModel by viewModels()
-    private val adapter = MyListAdapter({})
+    private val adapter = MyListAdapter {
+        binding.root.findNavController().navigate(FragmentListDirections.actionFragmentListToFragmentDetails(it))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
