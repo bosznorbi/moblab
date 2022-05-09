@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.bme.aut.pokedb.model.PokemonDto
 import hu.bme.aut.pokedb.model.Region
-import hu.bme.aut.pokedb.model.Type
 import hu.bme.aut.pokedb.repository.PokemonRepository
 import kotlinx.coroutines.launch
 import javax.inject.Inject

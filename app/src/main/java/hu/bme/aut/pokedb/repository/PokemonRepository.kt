@@ -15,7 +15,7 @@ class PokemonRepository @Inject constructor(
     suspend fun getPokemon(): List<PokemonDto> {
         Log.d("CUSTOM", "PokemonRepository : started")
         try {
-            val pokemonList = pokemonController.getPokemonList(0, 890)
+            val pokemonList = pokemonController.getPokemonList(0, 890).toDtoList()
             pokemonList.map { pokemonDao.insertPokemon(it.toEntity()) }
             if (pokemonList.isEmpty()) {
                 throw Exception("Empty list")
@@ -37,7 +37,7 @@ class PokemonRepository @Inject constructor(
     suspend fun getDetails(id: Int): PokemonDto {
         Log.d("CUSTOM", "PokemonRepository : started")
         return try {
-            pokemonController.getPokemon(id)
+            pokemonController.getPokemon(id).toDto()
         } catch (e: Exception) {
             Log.d("CUSTOM", "PokemonRepository : failed to call API")
             pokemonDao.getPokemon(id).toDto()
