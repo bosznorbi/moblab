@@ -22,7 +22,7 @@ class PokemonRepository @Inject constructor(
             }
             return pokemonList
         } catch (e: Exception) {
-            Log.d("CUSTOM", "PokemonRepository : failed to call API")
+            Log.d("CUSTOM", "PokemonRepository : failed to call API -> ${e.message}")
             val entityList = pokemonDao.getAllPokemon()
             if (entityList.isEmpty()) {
                 Log.d("CUSTOM", "PokemonRepository : sent placeholder data: $PLACEHOLDER")

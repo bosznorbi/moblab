@@ -22,9 +22,12 @@ object NetworkModule {
     fun provideConverterFactory(moshi: Moshi): Converter.Factory = MoshiConverterFactory.create(moshi)
 
     @Provides
-    fun provideRetrofit(): Retrofit {
+    fun provideRetrofit(
+        converterFactory: Converter.Factory
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://pokeapi.co/api/v2/")
+            .addConverterFactory(converterFactory)
             .build()
     }
 

@@ -1,7 +1,6 @@
 package hu.bme.aut.pokedb.model
 
 import com.squareup.moshi.Json
-import hu.bme.aut.pokedb.db.PokemonEntity
 
 data class PokemonResponse(
 
@@ -22,14 +21,7 @@ data class PokemonResponse(
         id = id,
         name = name,
         type1 = Type.fromName(types[0].type.name)!!,
-        type2 = Type.values().random(), // TODO: megoldani hogyha nincs type2 akkor is jo legyen -- Type.fromName(types[1].type.name),
-        imageUrl = sprites.frontDefault
-    )
-    fun toEntity() = PokemonEntity(
-        id = id,
-        name = name,
-        type1 = Type.fromName(types[0].type.name)!!,
-        type2 = Type.values().random(), // TODO: megoldani hogyha nincs type2 akkor is jo legyen -- Type.fromName(types[1].type.name),
+        type2 = Type.values().random(), // TODO: Type.fromName(types[1].type.name),
         imageUrl = sprites.frontDefault
     )
 }
