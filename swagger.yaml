@@ -191,10 +191,6 @@ definitions:
           - "NOTHING"
       imageUrl:
         type: "string"
-      ability:
-        type: "string"
-      moves:
-        type: "integer"
 externalDocs:
   description: "Find out more about Swagger"
   url: "http://swagger.io"
