@@ -30,7 +30,7 @@ class ListViewModel @Inject constructor(
 
     fun getRegion(region: Region): List<PokemonDto>? {
         return allPokemon.value
-            ?.filter { (key, _) -> key >= region.offset && key <= (region.offset + region.limit) }
+            ?.filter { (key, _) -> key > region.offset && key <= (region.offset + region.limit) }
             ?.values
             ?.toList()
     }
