@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import hu.bme.aut.pokedb.databinding.ItemBinding
 import hu.bme.aut.pokedb.model.PokemonDto
 
-class MyListAdapter(private val onClick: () -> Unit) : ListAdapter<PokemonDto, MyListAdapter.PokemonViewHolder>(MyDiffUtil()) {
+class MyListAdapter(private val onClick: (pokemonId: Int) -> Unit) : ListAdapter<PokemonDto, MyListAdapter.PokemonViewHolder>(MyDiffUtil()) {
 
     class PokemonViewHolder(
         private val binding: ItemBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        val root = binding.root
 
         fun bind(pokemonDto: PokemonDto) {
             binding.itemIdTextView.text = pokemonDto.id.toString()
@@ -29,6 +31,7 @@ class MyListAdapter(private val onClick: () -> Unit) : ListAdapter<PokemonDto, M
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
         holder.bind(getItem(position))
+        holder.root.setOnClickListener { onClick(getItem(position).id) }
     }
 }
 
