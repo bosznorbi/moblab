@@ -8,6 +8,9 @@ import androidx.room.Query
 @Dao
 interface PokemonDao {
 
+    @Query("select * from pokemon where id = :id")
+    suspend fun getPokemon(id: Int): PokemonEntity
+
     @Query("select * from pokemon")
     suspend fun getAllPokemon(): List<PokemonEntity>
 

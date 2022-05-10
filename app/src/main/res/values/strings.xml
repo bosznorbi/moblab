@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Pokémon Database</string>
+
+    <string name="r1">Kanto</string>
+    <string name="r2">Johto</string>
+    <string name="r3">Hoenn</string>
+    <string name="r4">Sinnoh</string>
+    <string name="r5">Unova</string>
+    <string name="r6">Kalos</string>
+    <string name="r7">Alola</string>
+    <string name="r8">Galar</string>
+
+    <string name="randomButton">Random Pokemon</string>
+
+    <string name="id">ID</string>
+    <string name="pokemon">Pokemon</string>
+    <string name="type1">type</string>
+    <string name="slash"> • </string>
+    <string name="type2">type</string>
+    <string name="imageUrl">Image URL</string>
 </resources>

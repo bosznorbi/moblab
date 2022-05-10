@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/fragmentList">
+
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="hu.bme.aut.pokedb.ui.list.FragmentList"
+        android:label="FragmentList" >
+        <action
+            android:id="@+id/action_fragmentList_to_fragmentDetails"
+            app:destination="@id/fragmentDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetails"
+        android:name="hu.bme.aut.pokedb.ui.details.FragmentDetails"
+        android:label="FragmentDetails" >
+        <argument
+            android:name="pokemonId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
