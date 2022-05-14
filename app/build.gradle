@@ -5,13 +5,15 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
     compileSdkVersion 31
     defaultConfig {
         applicationId "hu.bme.aut.pokedb"
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 31
         versionCode 1
         versionName "1.2.0"
@@ -80,4 +82,8 @@ dependencies {
     testImplementation "org.robolectric:robolectric:4.7.3"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
     kaptTest "com.google.dagger:hilt-compiler:$hilt_version"
+
+    implementation platform('com.google.firebase:firebase-bom:30.0.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
 }

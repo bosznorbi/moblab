@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "476871761626",
+    "project_id": "pokedb-34c5a",
+    "storage_bucket": "pokedb-34c5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:476871761626:android:5e1627d36b1433c6f34fe3",
+        "android_client_info": {
+          "package_name": "hu.bme.aut.pokedb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "476871761626-l4o0v7958bklt84cagdkmlv3jdouk5f2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw7-X2Z4RI59X_hhXIJ1MGK8zikG89tOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "476871761626-l4o0v7958bklt84cagdkmlv3jdouk5f2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
