@@ -8,7 +8,7 @@
     <string name="r5">Unova</string>
     <string name="r6">Kalos</string>
     <string name="r7">Alola</string>
-    <string name="r8">Galar</string>
+    <string name="r8">Crash</string> <!-- Galar - if forced crash button was removed -->
 
     <string name="randomButton">Random Pokemon</string>
 
